@@ -28,7 +28,7 @@ export const data =
     ,
     {
         "id": 6,
-        "name": "For Titanium",
+        "name": "Ford Titanium",
         "image": "https://i.pinimg.com/236x/cd/1b/11/cd1b11512fb404fbd400c086598b5efd.jpg"
     }
 ]
