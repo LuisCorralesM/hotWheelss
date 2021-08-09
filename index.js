@@ -81,31 +81,3 @@ const setdisLike = object => {
 
     console.log(disLike[boton.id]);
 }
-    
-    
-    if(like[boton.id].cantidad > 0){
-        if (disLike.hasOwnProperty(boton.id)) {
-        disLike[boton.id].cantidad = disLike[boton.id].cantidad;
-        boton.cantidad = disLike[boton.id].cantidad -= 1;
-        object.querySelector('#disLike').textContent = boton.cantidad;
-        } 
-
-        disLike[boton.id] = {...boton};
-
-    console.log(disLike[boton.id]);
-    }
-
-    if(like[boton.id].cantidad != 0){
-        if (like.hasOwnProperty(boton.id)) {
-        boton.cantidad = like[boton.id].cantidad -= 1;
-        object.querySelector('#like').textContent = boton.cantidad;
-    }
-
-    like[boton.id] = {...boton};
-
-    console.log(like[boton.id]);
-    }
-    
-
-    
-}
