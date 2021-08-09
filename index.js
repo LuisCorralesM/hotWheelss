@@ -36,21 +36,12 @@ const addLike = e => {
     }
 }
 
-const setLike = objeto => {
-    const boton = {
-        id: objeto.querySelector('.btn-dark').dataset.id,
-        cantidad: 0
-    }
-
-    if (like.hasOwnProperty(boton.id)) {
-        boton.cantidad = like[boton.id].cantidad + 1;
-        objeto.querySelector('#like').textContent = boton.cantidad;
-    }
-
-    like[boton.id] = {...boton};
-
-    console.log(like[boton.id]);
-}
+const setLike = object => {
+    const label = object.querySelector('#like')
+    let cantidad = Number(label.textContent) || 0
+    cantidad++
+    label.textContent = cantidad
+  }
 
 //disLike   
 
@@ -67,17 +58,8 @@ const adddisLike = a => {
 }
 
 const setdisLike = object => {
-    const boton = {
-        id: object.querySelector('.btn-white').dataset.id,
-        cantidad: 0
-    }
-
-    if (disLike.hasOwnProperty(boton.id)) {
-        boton.cantidad = disLike[boton.id].cantidad + 1;
-        object.querySelector('#disLike').textContent = boton.cantidad;
-    }
-
-    disLike[boton.id] = {...boton};
-
-    console.log(disLike[boton.id]);
-}
+    const label = object.querySelector('#disLike')
+    let cantidad = Number(label.textContent) || 0
+    cantidad++
+    label.textContent = cantidad
+  }
