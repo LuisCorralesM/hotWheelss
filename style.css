@@ -12,3 +12,7 @@
 #img img {
    border: 0;
 }
+.portada img{
+   height: 100vh;
+   width: 1000vw;
+}
