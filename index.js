@@ -5,6 +5,8 @@ const templateCard = document.getElementById('template-card').content;
 const fragment = document.createDocumentFragment();
 let like = [], disLike = [];
 
+let number = 0;
+
 document.addEventListener('DOMContentLoaded', () => {
     loadData(data);
 })
@@ -68,16 +70,35 @@ const adddisLike = a => {
 
 const setdisLike = object => {
     const boton = {
-        id: object.querySelector('.btn-white').dataset.id,
+        id: object.querySelector('.btn-dark').dataset.id,
         cantidad: 0
     }
 
-    if (disLike.hasOwnProperty(boton.id)) {
-        boton.cantidad = disLike[boton.id].cantidad - 1;
+    
+    
+    if(like[boton.id].cantidad > 0){
+        if (disLike.hasOwnProperty(boton.id)) {
+        disLike[boton.id].cantidad = disLike[boton.id].cantidad;
+        boton.cantidad = disLike[boton.id].cantidad -= 1;
         object.querySelector('#disLike').textContent = boton.cantidad;
-    }
+        } 
 
-    disLike[boton.id] = {...boton};
+        disLike[boton.id] = {...boton};
 
     console.log(disLike[boton.id]);
+    }
+
+    if(like[boton.id].cantidad != 0){
+        if (like.hasOwnProperty(boton.id)) {
+        boton.cantidad = like[boton.id].cantidad -= 1;
+        object.querySelector('#like').textContent = boton.cantidad;
+    }
+
+    like[boton.id] = {...boton};
+
+    console.log(like[boton.id]);
+    }
+    
+
+    
 }
